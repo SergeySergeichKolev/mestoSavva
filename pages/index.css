@@ -1,13 +1,163 @@
-@import url('../vendor/normalize.css');
-@import url('../vendor/fonts.css');
-@import url('../blocks/page/page.css');
-@import url('../blocks/header/header.css');
-@import url('../blocks/content/content.css');
-@import url('../blocks/footer/footer.css');
-@import url('../blocks/profile/profile.css');
-@import url('../blocks/places/places.css');
-@import url('../blocks/card/card.css');
-@import url('../blocks/popup/popup.css');
-@import url('../blocks/popup/_is-animated/popup_is-animated.css');
-@import url('../blocks/popup/_is-opened/popup_is-opened.css');
 
+.card__delete-button {
+  width: 18px;
+  height: 18px;
+  background: transparent url('../../../images/delete-icon.svg') center no-repeat;
+  /*Потом это будет из модификатора*/
+  background-size: 18px 18px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card__delete-button:hover {
+  opacity: 0.6;
+}
+
+
+.card__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 25px 20px;
+}
+
+
+.card__image {
+  height: 282px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card__image:hover {
+  cursor: pointer;
+}
+
+.card__like-button_is-active {
+  background: transparent url('../../../../images/like-active.svg') no-repeat;
+}
+
+.card__like-button {
+  width: 21px;
+  height: 18px;
+  background: transparent url('../../../images/like-inactive.svg') no-repeat;
+  
+  background-size: 21px 18px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.card__like-button:hover {
+  opacity: 0.6;
+}
+.card__title {
+  max-width: 220px;
+  font-size: 24px;
+  line-height: 29px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  /*Либо с точками из макета, либо этот набор свойств для эллипсиса текста в можно лучше*/
+  margin: 0;
+}
+
+.card {
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.content {
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+.footer__copyright {
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+  margin: 0;
+}
+
+@media screen and (max-width: 568px) {
+  .footer__copyright {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+.footer {
+  font-family: 'Inter', Arial, sans-serif;
+  flex-shrink: 0;
+  padding: 30px 0 60px;
+}
+
+@media screen and (max-width: 568px) {
+  .footer {
+    padding: 30px 0 36px;
+  }
+}
+.header__logo {
+  width: 142px;
+  height: 33px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 480px) {
+  .header__logo {
+    width: 104px;
+    height: 24px;
+    margin: 0 0 0 7px;
+  }
+}
+
+.header {
+  min-height: 120px;
+  font-family: 'Inter', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header::before {
+  content: '';
+  width: 100%;
+  height: 1px;
+  opacity: 0.7;
+  background: #545454;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    min-height: 85px;
+  }
+  .header::before {
+    width: calc(100% + 40px);
+  }
+}
